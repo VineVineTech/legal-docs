@@ -1,6 +1,7 @@
 ---
 layout: page
 title: AICheckLab 各サービス 規約・プライバシーポリシー集
+permalink: /
 ---
 
 駒形 亮（Ryo Komagata）が運営する各サービスの利用規約・プライバシーポリシーを公開しています。
