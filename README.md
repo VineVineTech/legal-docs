@@ -1,4 +1,7 @@
-# AICheckLab 各サービス 規約・プライバシーポリシー集
+---
+layout: page
+title: AICheckLab 各サービス 規約・プライバシーポリシー集
+---
 
 駒形 亮（Ryo Komagata）が運営する各サービスの利用規約・プライバシーポリシーを公開しています。
 
@@ -6,8 +9,8 @@
 
 ふたりの週末を、探さず決めるアプリ。
 
-- [利用規約](./hareru/terms.md)
-- [プライバシーポリシー](./hareru/privacy.md)
+- [利用規約](./hareru/terms/)
+- [プライバシーポリシー](./hareru/privacy/)
 
 ## お問い合わせ
 

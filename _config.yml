@@ -2,3 +2,12 @@ theme: minima
 title: AICheckLab Legal Docs
 description: 各サービスの利用規約・プライバシーポリシー
 permalink: pretty
+
+# minima のヘッダーナビに出すページを明示的に限定する。
+# 指定しないと minima は title を持つ全ページ（ホーム自身を含む）を
+# 自動列挙してしまい、「AICheckLab 各サービス…」というホームへの
+# 重複タブが出る。site-title クリックでホームに戻れるため不要。
+# ここを規約・ポリシーの2件だけにすることでホームタブを除外する。
+header_pages:
+  - hareru/terms.md
+  - hareru/privacy.md
