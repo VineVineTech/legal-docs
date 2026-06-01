@@ -9,7 +9,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
                "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-  line-height: 1.8;
+  line-height: 1.85;
   color: #2c2c2c;
   background-color: #fafaf7;
   font-size: 16px;
@@ -17,28 +17,67 @@ body {
 
 /* Container — 中央寄せ、適度な幅で目に優しく */
 .wrapper, .container, main {
-  max-width: 720px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 48px 24px 96px;
 }
 
-/* Headings */
+/* ---- Site header (minima default) — 控えめなブランド感 ---- */
+.site-header {
+  border-top: 0;
+  border-bottom: 1px solid #ece7df;
+  background: linear-gradient(180deg, #fbf7f1 0%, #fafaf7 100%);
+  min-height: auto;
+}
+
+.site-header .wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.site-title,
+.site-title:visited {
+  color: #1a1a1a;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-bottom: none;
+}
+
+.site-title:hover {
+  color: #c46a5b;
+  border-bottom: none;
+  background: transparent;
+}
+
+.site-nav .page-link {
+  color: #5c574f;
+}
+
+/* ---- Article title (h1) — 余韻のある区切り ---- */
 h1 {
   font-size: 28px;
   font-weight: 700;
   color: #1a1a1a;
-  border-bottom: 2px solid #e8e4dc;
-  padding-bottom: 16px;
-  margin-top: 0;
-  margin-bottom: 32px;
+  padding-bottom: 18px;
+  margin-top: 8px;
+  margin-bottom: 48px;
+  /* flat 2px → 細いグラデーションフェードで優しく */
+  border-bottom: none;
+  background-image: linear-gradient(90deg, #d8a99c 0%, #e8e4dc 60%, transparent 100%);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 2px;
 }
 
+/* ---- Section heading (h2) — 左にアクセント帯 ---- */
 h2 {
   font-size: 20px;
   font-weight: 600;
   color: #1a1a1a;
-  margin-top: 48px;
-  margin-bottom: 16px;
+  margin-top: 56px;
+  margin-bottom: 18px;
+  padding-left: 14px;
+  border-left: 4px solid #d99c8d;
 }
 
 h3 {
@@ -51,40 +90,103 @@ h3 {
 
 p { margin-bottom: 16px; }
 
+/* ---- Lists — 番号にアクセント、余白を上品に ---- */
 ul, ol {
-  padding-left: 24px;
-  margin-bottom: 16px;
+  padding-left: 26px;
+  margin-bottom: 18px;
 }
 
-li { margin-bottom: 6px; }
+li {
+  margin-bottom: 8px;
+  line-height: 1.85;
+}
 
+/* 番号リストの数字をアクセントカラーに */
+ol > li::marker {
+  color: #c46a5b;
+  font-weight: 600;
+}
+
+/* 箇条書きの bullet を細い中点に差し替え */
+ul { list-style: none; padding-left: 24px; }
+
+ul > li {
+  position: relative;
+  padding-left: 18px;
+}
+
+ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #c8a89e;
+  font-weight: 700;
+}
+
+/* ---- Emphasis — 本文より少し濃く + ほのかなハイライト線 ---- */
 strong {
   font-weight: 600;
   color: #1a1a1a;
+  background-image: linear-gradient(transparent 70%, rgba(196, 106, 91, 0.12) 0);
 }
 
+/* ---- Horizontal rule — 中央フェードの控えめな区切り ---- */
 hr {
   border: 0;
   height: 1px;
-  background-color: #e8e4dc;
-  margin: 48px 0;
+  margin: 52px 0;
+  background-image: linear-gradient(90deg, transparent 0%, #e0dace 50%, transparent 100%);
 }
 
+/* ---- Links — オレンジ維持 + ホバーに薄クリーム背景 + 外部リンク ↗ ---- */
 a {
   color: #c46a5b;
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease;
+  border-radius: 2px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 a:hover {
   border-bottom-color: #c46a5b;
+  background-color: rgba(196, 106, 91, 0.07);
+}
+
+/* 外部リンク（http/https）に控えめな ↗ */
+a[href^="http"]::after {
+  content: "\2197";
+  font-size: 0.8em;
+  margin-left: 2px;
+  color: #c8a89e;
+}
+
+/* ---- 改定履歴 — 末尾の控えめな扱い ---- */
+/* 「改定履歴」見出しは本文より小さく、上に十分な余白で区切る。
+   ページ末尾の最後の h2 を対象にする。 */
+main h2:last-of-type {
+  font-size: 17px;
+  color: #5c574f;
+  margin-top: 72px;
+  border-left-color: #d8cfc0;
+}
+
+/* ---- Footer (minima default) — Hareru の温度 ---- */
+.site-footer {
+  border-top: 1px solid #ece7df;
+  background-color: #f4efe7;
+  color: #6a655c;
+}
+
+.site-footer .footer-col-wrapper,
+.site-footer .footer-heading {
+  color: #6a655c;
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   body { font-size: 15px; }
   .wrapper, .container, main { padding: 32px 20px 64px; }
-  h1 { font-size: 24px; }
-  h2 { font-size: 18px; }
+  h1 { font-size: 24px; margin-bottom: 36px; }
+  h2 { font-size: 18px; margin-top: 44px; }
+  ul, ol { padding-left: 20px; }
 }
